@@ -1,0 +1,167 @@
+ScreenManager:
+    MainScreen:
+    StudentScreen:
+    TeacherScreen:
+    AdminScreen:
+    SearchStudentScreen:
+    SearchTeacherScreen:
+    SearchAdminScreen:
+    GenerateCertificateScreen:
+
+<MainScreen>:
+    name: 'main'
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+        Button:
+            text: 'Add Student'
+            on_release: app.root.current = 'student'
+        Button:
+            text: 'Add Teacher'
+            on_release: app.root.current = 'teacher'
+        Button:
+            text: 'Add Admin'
+            on_release: app.root.current = 'admin'
+        Button:
+            text: 'Search Student'
+            on_release: app.root.current = 'search_student'
+        Button:
+            text: 'Search Teacher'
+            on_release: app.root.current = 'search_teacher'
+        Button:
+            text: 'Search Admin'
+            on_release: app.root.current = 'search_admin'
+        Button:
+            text: 'Generate Certificate'
+            on_release: app.root.current = 'certificate'
+
+<StudentScreen>:
+    name: 'student'
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+        TextInput:
+            id: student_name
+            hint_text: 'Student Name'
+        TextInput:
+            id: student_id
+            hint_text: 'Student ID'
+        Button:
+            text: 'Add Student'
+            on_release: root.add_student()
+        Button:
+            text: 'Back'
+            on_release: app.root.current = 'main'
+
+<TeacherScreen>:
+    name: 'teacher'
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+        TextInput:
+            id: teacher_name
+            hint_text: 'Teacher Name'
+        TextInput:
+            id: subject
+            hint_text: 'Subject'
+        Button:
+            text: 'Add Teacher'
+            on_release: root.add_teacher()
+        Button:
+            text: 'Back'
+            on_release: app.root.current = 'main'
+
+<AdminScreen>:
+    name: 'admin'
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+        TextInput:
+            id: admin_name
+            hint_text: 'Admin Name'
+        TextInput:
+            id: admin_id
+            hint_text: 'Admin ID'
+        Button:
+            text: 'Add Admin'
+            on_release: root.add_admin()
+        Button:
+            text: 'Back'
+            on_release: app.root.current = 'main'
+
+<SearchStudentScreen>:
+    name: 'search_student'
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+        TextInput:
+            id: search_id
+            hint_text: 'Enter Student ID'
+        Button:
+            text: 'Search'
+            on_release: root.search_student()
+        Label:
+            id: result
+            text: ''
+        Button:
+            text: 'Back'
+            on_release: app.root.current = 'main'
+
+<SearchTeacherScreen>:
+    name: 'search_teacher'
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+        TextInput:
+            id: search_name
+            hint_text: 'Enter Teacher Name'
+        Button:
+            text: 'Search'
+            on_release: root.search_teacher()
+        Label:
+            id: result_teacher
+            text: ''
+        Button:
+            text: 'Back'
+            on_release: app.root.current = 'main'
+
+<SearchAdminScreen>:
+    name: 'search_admin'
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+        TextInput:
+            id: search_admin_name
+            hint_text: 'Enter Admin Name'
+        Button:
+            text: 'Search'
+            on_release: root.search_admin()
+        Label:
+            id: result_admin
+            text: ''
+        Button:
+            text: 'Back'
+            on_release: app.root.current = 'main'
+
+<GenerateCertificateScreen>:
+    name: 'certificate'
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+        TextInput:
+            id: certificate_name
+            hint_text: 'Student Name for Certificate'
+        Button:
+            text: 'Generate Certificate'
+            on_release: root.generate_certificate()
+        Button:
+            text: 'Back'
+            on_release: app.root.current = 'main'
